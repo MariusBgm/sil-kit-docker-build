@@ -11,7 +11,11 @@ RUN \
         apt-get update && \
         apt-get install --no-install-recommends --no-install-suggests -y \
             wget \
-            unzip
+            unzip \
+            build-essential \
+            cmake \
+            tmux \
+            ;
 
 ARG SILKIT_VERSION=4.0.48
 ARG SILKIT_DOWNLOAD_URL=https://github.com/vectorgrp/sil-kit/releases/download/sil-kit%2Fv${SILKIT_VERSION}/SilKit-${SILKIT_VERSION}-ubuntu-18.04-x86_64-gcc.zip
