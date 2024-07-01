@@ -20,8 +20,8 @@ jobs:
             utils=./utils/
           build-args: |
             UBUNTU_VERSION=18.04
-            GCC_VERSION=8
-            CLANG_VERSION=6
+            GCC_SUFFIX=-8
+            CLANG_SUFFIX=""
           file: ./containers/ci-ubuntu/Dockerfile
           push: false
           load: true
@@ -48,8 +48,8 @@ jobs:
             utils=./utils/
           build-args: |
             UBUNTU_VERSION=20.04
-            GCC_VERSION=9
-            CLANG_VERSION=10
+            GCC_SUFFIX=-9
+            CLANG_SUFFIX=-10
           file: ./containers/ci-ubuntu/Dockerfile
           push: false
           load: true
@@ -76,8 +76,8 @@ jobs:
             utils=./utils/
           build-args: |
             UBUNTU_VERSION=22.04
-            GCC_VERSION=11
-            CLANG_VERSION=14
+            GCC_SUFFIX="-11"
+            CLANG_SUFFIX=-14
           file: ./containers/ci-ubuntu/Dockerfile
           push: false
           load: true
@@ -87,6 +87,6 @@ jobs:
         run: |
           docker run -itd --name emmy_noether sil-kit-test:latest /bin/bash
           docker cp ./utils/image_tests.sh emmy_noether:/home/image_tests.sh
-          docker exec -w /home/  emmy_noether sh image_tests.sh 11
+          docker exec -w /home/  emmy_noether sh image_tests.sh
 
 

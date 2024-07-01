@@ -7,8 +7,8 @@ ENV DEBIAN_FRONTEND "noninteractive"
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
-ARG GCC_VERSION="8"
-ARG CLANG_VERSION="6"
+ARG GCC_SUFFIX="-8"
+ARG CLANG_SUFFIX=""
 RUN \
         apt-get update \
         && \
@@ -23,14 +23,14 @@ RUN \
         git \
         build-essential \
         sudo \
-        gcc-${GCC_VERSION} \
-        g++-${GCC_VERSION} \
+        gcc${GCC_SUFFIX} \
+        g++${GCC_SUFFIX} \
         lsb-base \
         lsb-release \
         ninja-build \
         doxygen \
-        clang-${CLANG_VERSION} \
-        llvm-${CLANG_VERSION} \
+        clang${CLANG_SUFFIX} \
+        llvm${CLANG_SUFFIX} \
         python3-pip \
         && \
         apt-get clean
