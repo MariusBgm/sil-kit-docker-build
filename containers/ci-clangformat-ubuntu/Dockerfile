@@ -10,7 +10,7 @@ ENV LANG C.UTF-8
 RUN \
         apt-get update \
         && \
-        apt-get install -y --no-install-recommends wget \
+        apt-get install -y wget ca-certificates \
         && \
         wget https://apt.llvm.org/llvm.sh -P /tmp/ \
         && \
