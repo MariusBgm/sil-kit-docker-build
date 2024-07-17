@@ -10,15 +10,17 @@ ENV LANG C.UTF-8
 RUN \
         apt-get update \
         && \
+        apt-get install -y --no-install-recommends wget \
+        && \
         wget https://apt.llvm.org/llvm.sh -P /tmp/ \
         && \
         chmod +x /tmp/llvm.sh \
         && \
-        sudo /tmp/llvm.sh 18 \
+        /tmp/llvm.sh 18 \
         && \
-        sudo apt update \
+        apt update \
         && \
-        sudo apt install -y --no-install-recommends --no-install-suggests clang-format-18 \
+        apt install -y --no-install-recommends --no-install-suggests clang-format-18 \
         && \
         apt-get clean
 
