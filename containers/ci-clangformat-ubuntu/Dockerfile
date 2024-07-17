@@ -11,6 +11,7 @@ RUN \
         apt-get update \
         && \
         apt-get install -y \
+            git \
             wget \
             gnupg2 \
             software-properties-common \
