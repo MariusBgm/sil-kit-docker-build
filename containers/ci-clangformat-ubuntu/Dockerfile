@@ -10,7 +10,7 @@ ENV LANG C.UTF-8
 RUN \
         apt-get update \
         && \
-        apt-get install -y wget ca-certificates \
+        apt-get install -y wget ca-certificates lsb_release add-apt-repository gpg build-essentials\
         && \
         wget https://apt.llvm.org/llvm.sh -P /tmp/ \
         && \
@@ -20,7 +20,7 @@ RUN \
         && \
         apt update \
         && \
-        apt install -y --no-install-recommends --no-install-suggests clang-format-18 \
+        apt install -y clang-format-18 \
         && \
         apt-get clean
 
