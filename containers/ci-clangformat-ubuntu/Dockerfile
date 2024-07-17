@@ -10,7 +10,12 @@ ENV LANG C.UTF-8
 RUN \
         apt-get update \
         && \
-        apt-get install -y wget ca-certificates lsb_release add-apt-repository gpg build-essentials\
+        apt-get install -y \
+            wget \
+            gnupg2 \
+            software-properties-common \
+            lsb-base \
+            lsb-release \
         && \
         wget https://apt.llvm.org/llvm.sh -P /tmp/ \
         && \
